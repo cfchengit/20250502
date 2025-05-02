@@ -16,8 +16,12 @@ function draw() {
   // 清除畫布並重新設定背景顏色
   background('#e7c6ff');
   
-  // 將攝影機影像顯示在畫布中央
-  image(capture, (windowWidth - capture.width) / 2, (windowHeight - capture.height) / 2);
+  // 翻轉畫布以左右顛倒影像
+  push();
+  translate(width / 2, height / 2); // 將原點移到畫布中央
+  scale(-1, 1); // 水平翻轉
+  image(capture, -capture.width / 2, -capture.height / 2, capture.width, capture.height);
+  pop();
 }
 
 function windowResized() {
