@@ -4,10 +4,13 @@
 
 ## 第一條指令
 
+
+```tex
 產生一個全螢幕的畫布，背景顏色為e7c6ff
 擷取攝影機的影像，正常的顯示在視窗的中間
 影像畫面寬高為視窗大小的80%
 請把程式碼寫在sketch.js內
+```
 
 說明：
 1. createCanvas(windowWidth, windowHeight)：建立全螢幕畫布。
@@ -48,5 +51,3 @@ function windowResized() {
 }
 
 ```
-
-
