@@ -41,8 +41,12 @@ function draw() {
     }
   }
 
-  // 將 graphics 顯示在攝影機影像的上方
-  image(graphics, (width - graphics.width) / 2, (height - graphics.height) / 2);
+  // 修正 graphics 顯示的左右顛倒
+  push();
+  translate((width - graphics.width) / 2 + graphics.width / 2, (height - graphics.height) / 2 + graphics.height / 2);
+  scale(-1, 1); // 水平翻轉 graphics
+  image(graphics, -graphics.width / 2, -graphics.height / 2);
+  pop();
 }
 
 function windowResized() {
