@@ -30,14 +30,18 @@ function draw() {
   // 設定 graphics 的背景為黑色
   graphics.background(0);
 
-  // 在 graphics 上繪製每隔 20 單位的圓
+  // 在 graphics 上繪製每隔 20 單位的方框和圓
   for (let y = 0; y < graphics.height; y += 20) {
     for (let x = 0; x < graphics.width; x += 20) {
       // 從 capture 中取得相對位置的顏色
       let col = capture.get(x, y);
-      graphics.fill(col); // 設定圓的顏色
+      graphics.fill(col); // 設定方框的顏色
       graphics.noStroke();
-      graphics.ellipse(x + 10, y + 10, 15, 15); // 繪製圓，中心偏移 10 以對齊格子
+      graphics.rect(x + 1, y + 1, 18, 18); // 繪製方框，稍微偏移以對齊格子
+
+      // 在方框中間繪製黑色圓
+      graphics.fill(0); // 設定圓的顏色為黑色
+      graphics.ellipse(x + 10, y + 10, 5, 5); // 繪製圓，中心偏移 10 以對齊方框
     }
   }
 
